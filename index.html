@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Holder Mat Anti Selip - Dashboard Rapih & HP Aman Saat Berkendara | LUXURY GOODS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hijau-hutan': '#1a3b1a',
+                        'hijau-sage': '#87a96b',
+                        'mint': '#a8d8a8',
+                        'cokelat-tanah': '#6b5b47',
+                        'aksen-emas': '#d4af37',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --hijau-hutan: #1a3b1a;
+            --hijau-sage: #87a96b;
+            --mint: #a8d8a8;
+            --cokelat-tanah: #6b5b47;
+            --aksen-emas: #d4af37;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(26, 59, 26, 0.9) 0%, rgba(135, 169, 107, 0.8) 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--aksen-emas) 0%, #c9a227 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .color-option:hover, .color-option.active {
+            transform: scale(1.1);
+            border-color: var(--aksen-emas);
+        }
+        
+        .notification-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out forwards;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 300px;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .notification-popup.hide {
+            animation: slideOut 0.5s ease-in forwards;
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-cta.show {
+            transform: translateY(0);
+        }
+        
+        .order-form-container {
+            background: linear-gradient(135deg, rgba(168, 216, 168, 0.1) 0%, rgba(135, 169, 107, 0.1) 100%);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .product-gallery img {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .product-gallery img:hover {
+            transform: scale(1.03);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--hijau-hutan);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .counter-label {
+            font-size: 1rem;
+            color: var(--cokelat-tanah);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 50px;
+            padding: 8px 20px;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--aksen-emas);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(168, 216, 168, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--hijau-hutan);
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--aksen-emas);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            animation: pulse-slow 2s infinite;
+        }
+        
+        .countdown-box {
+            background: rgba(26, 59, 26, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--hijau-hutan);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .countdown-label {
+            font-size: 0.75rem;
+            color: var(--cokelat-tanah);
+            text-transform: uppercase;
+        }
+        
+        .social-proof-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+        
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--hijau-hutan);
+            z-index: 1000;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close text-white text-3xl">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mt-16">
+            <ul class="space-y-6">
+                <li><a href="#hero" class="text-white text-xl block py-3">Beranda</a></li>
+                <li><a href="#features" class="text-white text-xl block py-3">Fitur</a></li>
+                <li><a href="#testimonials" class="text-white text-xl block py-3">Testimoni</a></li>
+                <li><a href="#pricing" class="text-white text-xl block py-3">Harga</a></li>
+                <li><a href="#order" class="text-white text-xl block py-3">Pesan Sekarang</a></li>
+            </ul>
+            <div class="mt-10">
+                <button class="btn-primary w-full py-4 rounded-xl text-white font-bold text-lg">
+                    <i class="fas fa-shopping-cart mr-2"></i> Pesan Sekarang
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full z-40 bg-white shadow-md py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-hijau-hutan">
+                        <span class="text-aksen-emas">LUXURY</span> GOODS
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="text-hijau-hutan hover:text-aksen-emas transition">Beranda</a>
+                    <a href="#features" class="text-hijau-hutan hover:text-aksen-emas transition">Fitur</a>
+                    <a href="#testimonials" class="text-hijau-hutan hover:text-aksen-emas transition">Testimoni</a>
+                    <a href="#pricing" class="text-hijau-hutan hover:text-aksen-emas transition">Harga</a>
+                    <a href="#order" class="text-hijau-hutan hover:text-aksen-emas transition">Pesan</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="btn-primary px-6 py-2 rounded-full text-white font-bold hidden md:block">
+                        <i class="fas fa-shopping-cart mr-2"></i> Pesan Sekarang
+                    </button>
+                    <button class="mobile-toggle md:hidden text-hijau-hutan text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-24 pb-20 md:pt-32 md:pb-28" style="background: url('https://down-id.img.susercontent.com/file/id-11134207-7rbkb-m6qkv9frflnl8b.webp') center/cover no-repeat;">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Phone Holder Mat Anti Selip
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-8">
+                    Bikin Dashboard Rapih & HP Aman Saat Berkendara
+                </p>
+                <div class="flex justify-center mb-8">
+                    <div class="discount-badge">DISKON 30%</div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <div class="trust-badge text-white flex items-center">
+                        <i class="fas fa-truck-fast mr-2"></i> Gratis Ongkir
+                    </div>
+                    <div class="trust-badge text-white flex items-center">
+                        <i class="fas fa-shield-alt mr-2"></i> Garansi 7 Hari
+                    </div>
+                    <div class="trust-badge text-white flex items-center">
+                        <i class="fas fa-rotate-left mr-2"></i> Pengembalian Mudah
+                    </div>
+                </div>
+                <button class="btn-primary px-8 py-4 rounded-full text-white font-bold text-lg mx-auto">
+                    <i class="fas fa-bolt mr-2"></i> DAPATKAN DISKON SEKARANG
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="py-16 bg-mint bg-opacity-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-hijau-hutan mb-4">Solusi Terbaik untuk Dashboard Mobil Anda</h2>
+                <p class="text-cokelat-tanah max-w-2xl mx-auto">Phone Holder Mat Anti Selip yang akan membuat perjalanan Anda lebih aman dan nyaman</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="product-gallery grid grid-cols-3 gap-4">
+                    <div class="cursor-pointer">
+                        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcc4-m6gq3mnxiupnf0.webp" alt="Phone Holder Mat" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="cursor-pointer">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0g-mbhp88q4iqp9f4.webp" alt="Phone Holder Mat" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="cursor-pointer">
+                        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcdt-m6gq3p281y8q98.webp" alt="Phone Holder Mat" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="cursor-pointer">
+                        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcc4-m6gq3rfyj3zvff.webp" alt="Phone Holder Mat" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="cursor-pointer">
+                        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcc0-m6gq3x14cp76ea.webp" alt="Phone Holder Mat" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="cursor-pointer">
+                        <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcca-m6gq3zkoo558e5.webp" alt="Phone Holder Mat" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-hijau-hutan mb-4">Fitur Unggulan</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="bg-aksen-emas rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-hijau-hutan font-medium">Anti Slip Super Kuat - HP tetap di tempatnya meski jalanan berlubang</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-aksen-emas rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-hijau-hutan font-medium">Bahan Premium & Tebal - Tahan panas dan mudah dibersihkan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-aksen-emas rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-hijau-hutan font-medium">Multifungsi - Untuk HP, koin, kunci, atau parfum mobil</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-aksen-emas rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-hijau-hutan font-medium">Tanpa Perekat - Mudah dipindah tanpa meninggalkan bekas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-aksen-emas rounded-full p-2 mr-3">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <span class="text-hijau-hutan font-medium">Cocok untuk GPS - Pegang HP stabil saat buka Maps</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-xl font-bold text-hijau-hutan mb-3">Pilih Warna:</h4>
+                        <div class="flex space-x-4">
+                            <div class="color-option bg-black active" data-color="black"></div>
+                            <div class="color-option bg-red-600" data-color="red"></div>
+                            <div class="color-option bg-blue-600" data-color="blue"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center text-hijau-hutan mb-8">Lihat Video Produk</h3>
+                <div class="video-container">
+                    <iframe src="https://down-bs-sg.vod.susercontent.com/api/v4/11110105/mms/id-11110105-6knat-m6qlfu2p4r6v68.16000081740643682.mp4" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits & Features -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-hijau-hutan mb-4">Mengapa Phone Holder Mat Ini Sangat Istimewa?</h2>
+                <p class="text-cokelat-tanah max-w-2xl mx-auto">Solusi praktis untuk menjaga HP tetap aman saat berkendara</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hijau-hutan mb-3">Anti Slip Super Kuat</h3>
+                    <p class="text-gray-600">HP tetap di tempatnya meski jalanan berlubang atau saat ngerem mendadak</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hijau-hutan mb-3">Bahan Premium</h3>
+                    <p class="text-gray-600">Tidak mudah rusak, tahan panas, dan mudah dibersihkan</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hijau-hutan mb-3">Multifungsi</h3>
+                    <p class="text-gray-600">Bisa untuk HP, koin, kunci, atau parfum mobil agar dashboard lebih rapih</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rfi6-m9o7r1e1evjged.webp" alt="Phone Holder Mat" class="w-full rounded-xl shadow-lg">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-hijau-hutan mb-4">Solusi Berkendara Lebih Aman</h3>
+                    <p class="text-gray-600 mb-6">Dengan Phone Holder Mat Anti Selip, Anda tidak perlu lagi khawatir HP terjatuh saat berkendara. Produk ini dirancang khusus untuk memberikan kenyamanan dan keamanan maksimal selama perjalanan.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="counter mb-2">100%</div>
+                            <div class="counter-label">Anti Slip</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="counter mb-2">5+</div>
+                            <div class="counter-label">Kegunaan</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="counter mb-2">10</div>
+                            <div class="counter-label">Detik Pasang</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="counter mb-2">1000+</div>
+                            <div class="counter-label">Terjual</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-hijau-sage bg-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-hijau-hutan mb-4">Apa Kata Pelanggan Kami?</h2>
+                <p class="text-cokelat-tanah max-w-2xl mx-auto">Ribuan pengendara sudah merasakan manfaatnya</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pinimg.com/736x/89/2a/8d/892a8daaed837140612fb449234d2a87.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h4 class="font-bold text-hijau-hutan">amaz_azha</h4>
+                            <div class="flex text-aksen-emas">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Mantap nih seller, harga ekonomis, respon cepat, pengiriman cepat. bakal jadi langganan"</p>
+                    <img src="https://down-id.img.susercontent.com/file/id-11134103-7r98o-lorripi4fb4949.webp" alt="Testimonial" class="w-full rounded-lg">
+                </div>
+                
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pinimg.com/1200x/ff/0f/b8/ff0fb84b91242cac50a8de0954cf4f88.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h4 class="font-bold text-hijau-hutan">h.dadang19</h4>
+                            <div class="flex text-aksen-emas">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Cocok Dan pas buat naruh benda diatas dashboard mobil Dan mobil doraemon ku gag jalan2 lagi. Terima kasih seller."</p>
+                    <img src="https://down-id.img.susercontent.com/file/id-11134103-7rbke-m74rw4i01rhoaa.webp" alt="Testimonial" class="w-full rounded-lg">
+                </div>
+                
+                <div class="testimonial-card p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pinimg.com/736x/20/e8/90/20e8908b47b72f92d9161126b853459a.jpg" alt="Customer" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-3">
+                            <h4 class="font-bold text-hijau-hutan">dessysuswitha13</h4>
+                            <div class="flex text-aksen-emas">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Keren Banget, Memudahkan untuk Komunikasi murah Juga, Cepet Jg sampe nyaaa. Kurir nya ramah kualitas oke bnget & recommended banget"</p>
+                    <img src="https://down-id.img.susercontent.com/file/id-11134103-7r992-lmcow4jxp21895.webp" alt="Testimonial" class="w-full rounded-lg">
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-xl p-8 shadow-lg">
+                <div class="flex flex-wrap items-center justify-between">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <div class="text-4xl font-bold text-hijau-hutan mr-3">4.9</div>
+                        <div>
+                            <div class="flex text-aksen-emas mb-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="text-gray-600">1.200+ ulasan</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-hijau-hutan">10K+</div>
+                            <div class="text-gray-600">Terjual</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-hijau-hutan">98%</div>
+                            <div class="text-gray-600">Kepuasan</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary px-6 py-3 rounded-full text-white font-bold mt-4 md:mt-0">
+                        <i class="fas fa-comments mr-2"></i> Lihat Semua Testimoni
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Promo -->
+    <section id="pricing" class="py-16 bg-hijau-hutan">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Dapatkan Diskon Spesial Hari Ini!</h2>
+                <p class="text-mint max-w-2xl mx-auto">Jangan lewatkan penawaran terbatas untuk produk premium ini</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="pricing-card p-8">
+                    <div class="text-center mb-8">
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-4xl font-bold text-hijau-hutan">Rp 175.000</span>
+                            <span class="text-xl text-gray-500 line-through ml-3">Rp 247.000</span>
+                        </div>
+                        <div class="bg-red-100 text-red-700 font-bold py-2 px-4 rounded-full inline-block">
+                            Hemat Rp 72.000 (30%)
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-center text-hijau-hutan mb-4">Penawaran Berakhir Dalam:</h3>
+                        <div class="flex justify-center space-x-4">
+                            <div class="countdown-box">
+                                <div class="countdown-value" id="countdown-hours">02</div>
+                                <div class="countdown-label">Jam</div>
+                            </div>
+                            <div class="countdown-box">
+                                <div class="countdown-value" id="countdown-minutes">45</div>
+                                <div class="countdown-label">Menit</div>
+                            </div>
+                            <div class="countdown-box">
+                                <div class="countdown-value" id="countdown-seconds">30</div>
+                                <div class="countdown-label">Detik</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-center text-hijau-hutan mb-4">Apa yang Anda Dapatkan:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-aksen-emas mr-2"></i>
+                                <span>1x Phone Holder Mat Anti Selip Premium</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-aksen-emas mr-2"></i>
+                                <span>Garansi 7 Hari</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-aksen-emas mr-2"></i>
+                                <span>Buku Panduan Penggunaan</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-aksen-emas mr-2"></i>
+                                <span>Gratis Ongkir ke Seluruh Indonesia</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="btn-primary px-8 py-4 rounded-full text-white font-bold text-lg w-full">
+                            <i class="fas fa-bolt mr-2"></i> PESAN SEKARANG DENGAN DISKON
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+           
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order" class="py-16 bg-mint bg-opacity-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-hijau-hutan mb-4">Pesan Sekarang Juga!</h2>
+                <p class="text-cokelat-tanah max-w-2xl mx-auto">Isi formulir di bawah ini untuk mendapatkan Phone Holder Mat Anti Selip dengan harga spesial</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto order-form-container p-8 glass-effect">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-hijau-hutan mb-2">Form Pemesanan</h3>
+                    <p class="text-gray-600">Isi data dengan benar untuk proses pengiriman</p>
+                </div>
+                
+                <!-- OrderOnline Embed Code -->
+                <div class="ooef">
+                    <form class="orderonline-embed-form" data-username="vera" data-product-slug="phone-holder-mat-anti-selip" data-product-id="6875dab66af1eea8480c4a1a" id="oo-embed-form-phone-holder-mat-anti-selip-8941" data-origin="orderonline">
+                        <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                    </form>
+                </div>
+                <script>
+                    if (typeof xLogError != 'function') {
+                        var xLogError = function (error) {
+                            var req = new XMLHttpRequest();
+                            var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                            var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                            req.open('POST', 'https://api.orderonline.id/log', true);
+                            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                            req.send(params);
+                        };
+                    }
+                    try {
+                        if (typeof xEmbedScript != 'function') {
+                            var xEmbedScript = function () {
+                                !function(w, d, e, v, id, t, s) {
+                                    if (d.getElementById(id)) return;
+                                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                    s = d.getElementsByTagName(e)[0];
+                                    s.parentNode.insertBefore(t, s);
+                                }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                            };
+                        }
+                        if (typeof xEmbedInit != 'function') {
+                            var xEmbedInit = function (w, n) {
+                                if (w.ooe) return;
+                                n = w.ooe = function() {
+                                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                };
+                                if (!w._ooe) w._ooe = n;
+                                n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                            };
+                        }
+                        xEmbedInit(window);
+                        ooe('setup', 'redirect', 'https://vera.orderonline.id');
+                        ooe('init', '5f1a7807a9bf807d6c63d963', '6875dab66af1eea8480c4a1a', '6875dab66af1eea8480c4a1b', 'oo-embed-form-phone-holder-mat-anti-selip-8941', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+                        if (!window.jQuery) {
+                            !function(w, d, e, v, id, t, s) {
+                                if (d.getElementById(id)) return;
+                                t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                t.addEventListener('load', xEmbedScript);
+                                s = d.getElementsByTagName(e)[0];
+                                s.parentNode.insertBefore(t, s);
+                            }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                        } else {
+                            xEmbedScript();
+                        }
+                    } catch (e) {
+                        xLogError(e);
+                        throw e;
+                    }
+                </script>
+                <!-- End OrderOnline Embed Code -->
+                
+                
+            </div>
+            
+            <div class="mt-12 flex flex-wrap justify-center gap-6">
+                <div class="flex items-center">
+                    <div class="bg-white p-3 rounded-full mr-3">
+                        <i class="fas fa-lock text-aksen-emas text-xl"></i>
+                    </div>
+                    <span class="text-gray-700">Pembayaran Aman & Terjamin</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-white p-3 rounded-full mr-3">
+                        <i class="fas fa-shield-alt text-aksen-emas text-xl"></i>
+                    </div>
+                    <span class="text-gray-700">Data Pribadi Terlindungi</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-white p-3 rounded-full mr-3">
+                        <i class="fas fa-truck text-aksen-emas text-xl"></i>
+                    </div>
+                    <span class="text-gray-700">Pengiriman Cepat 1-3 Hari</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-hijau-hutan mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-cokelat-tanah max-w-2xl mx-auto">Temukan jawaban atas pertanyaan Anda tentang Phone Holder Mat Anti Selip</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left p-6 bg-gray-50 font-bold text-hijau-hutan flex justify-between items-center">
+                            <span>Apakah produk ini benar-benar anti selip?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer p-6 hidden">
+                            <p class="text-gray-600">Ya, Phone Holder Mat ini menggunakan teknologi anti selip premium yang telah teruji. Produk ini tetap stabil meski di jalanan bergelombang atau saat pengereman mendadak.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left p-6 bg-gray-50 font-bold text-hijau-hutan flex justify-between items-center">
+                            <span>Apakah produk ini cocok untuk semua jenis mobil?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer p-6 hidden">
+                            <p class="text-gray-600">Produk ini dirancang untuk semua jenis dashboard mobil. Bahan dasarnya yang fleksibel memungkinkan produk ini menempel dengan sempurna di berbagai permukaan dashboard.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left p-6 bg-gray-50 font-bold text-hijau-hutan flex justify-between items-center">
+                            <span>Berapa lama waktu pengiriman?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer p-6 hidden">
+                            <p class="text-gray-600">Kami melakukan pengiriman dalam 1 hari kerja setelah pembayaran dikonfirmasi. Waktu pengiriman bervariasi tergantung lokasi, umumnya 1-3 hari untuk Jabodetabek dan 2-5 hari untuk luar Jabodetabek.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="faq-question w-full text-left p-6 bg-gray-50 font-bold text-hijau-hutan flex justify-between items-center">
+                            <span>Bagaimana cara perawatan produk ini?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer p-6 hidden">
+                            <p class="text-gray-600">Perawatan sangat mudah. Cukup lap dengan kain lembab atau tissue basah untuk membersihkannya. Hindari penggunaan bahan kimia keras yang dapat merusak permukaan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-hijau-hutan text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">LUXURY GOODS</h3>
+                    <p class="text-mint mb-4">Menyediakan produk berkualitas untuk kebutuhan kendaraan Anda.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-aksen-emas"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-aksen-emas"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-aksen-emas"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-white hover:text-aksen-emas"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Produk</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-mint hover:text-white">Phone Holder Mat</a></li>
+                        <li><a href="#" class="text-mint hover:text-white">Holder Dashboard</a></li>
+                        <li><a href="#" class="text-mint hover:text-white">Organizer Mobil</a></li>
+                        <li><a href="#" class="text-mint hover:text-white">Aksesoris Mobil</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Bantuan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-mint hover:text-white">Cara Pemesanan</a></li>
+                        <li><a href="#" class="text-mint hover:text-white">Pembayaran</a></li>
+                        <li><a href="#" class="text-mint hover:text-white">Pengiriman</a></li>
+                        <li><a href="#" class="text-mint hover:text-white">Garansi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-aksen-emas"></i>
+                            <span class="text-mint">Jl. Sudirman No. 123, Jakarta Pusat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone mt-1 mr-3 text-aksen-emas"></i>
+                            <span class="text-mint">(021) 1234-5678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-aksen-emas"></i>
+                            <span class="text-mint">info@luxurygoods.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-aksen-emas"></i>
+                            <span class="text-mint">+62 8953 8406 0107</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-hijau-sage border-opacity-20 mt-12 pt-8 text-center text-mint">
+                <p>&copy; 2025 LUXURY GOODS. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta bg-white shadow-lg py-4 px-6 flex justify-between items-center">
+        <div>
+            <div class="font-bold text-hijau-hutan">Phone Holder Mat Anti Selip</div>
+            <div class="flex items-baseline">
+                <span class="text-xl font-bold text-aksen-emas">Rp 175.000</span>
+                <span class="text-gray-500 line-through ml-2">Rp 247.000</span>
+            </div>
+        </div>
+        <button class="btn-primary px-6 py-3 rounded-full text-white font-bold">
+            <i class="fas fa-shopping-cart mr-2"></i> Pesan Sekarang
+        </button>
+    </div>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay">
+        <div class="close-lightbox">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="lightbox-content">
+            <img src="" alt="Product Image">
+        </div>
+    </div>
+
+    <!-- Notification Popup Template -->
+    <div class="notification-popup hidden">
+        <div class="bg-white p-4 flex items-center">
+            <div class="mr-3">
+                <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img src="" alt="Customer" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div>
+                <div class="font-bold text-hijau-hutan customer-name">Nama</div>
+                <div class="text-sm text-gray-600 customer-action">baru saja memesan Phone Holder Mat</div>
+                <div class="text-xs text-gray-500 customer-time">Baru saja</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.add('active');
+        });
+        
+        document.querySelector('.mobile-menu-close').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+        });
+        
+        // Color Selection
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    answer.classList.add('hidden');
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const hoursElement = document.getElementById('countdown-hours');
+            const minutesElement = document.getElementById('countdown-minutes');
+            const secondsElement = document.getElementById('countdown-seconds');
+            
+            let hours = parseInt(hoursElement.textContent);
+            let minutes = parseInt(minutesElement.textContent);
+            let seconds = parseInt(secondsElement.textContent);
+            
+            seconds--;
+            
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    
+                    if (hours < 0) {
+                        hours = 0;
+                        minutes = 0;
+                        seconds = 0;
+                    }
+                }
+            }
+            
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        
+        // Sticky Header and CTA
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+            
+            // Show sticky CTA on mobile
+            const stickyCTA = document.querySelector('.sticky-cta');
+            if (window.innerWidth < 768 && scrollTop > 500) {
+                stickyCTA.classList.add('show');
+            } else {
+                stickyCTA.classList.remove('show');
+            }
+            
+            // Scroll to top button
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            if (scrollTop > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Scroll to top
+        document.querySelector('.scroll-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Lightbox for product gallery
+        const lightbox = document.querySelector('.lightbox-overlay');
+        const lightboxImg = lightbox.querySelector('img');
+        
+        document.querySelectorAll('.product-gallery img').forEach(img => {
+            img.addEventListener('click', function() {
+                lightboxImg.src = this.src;
+                lightbox.classList.add('active');
+            });
+        });
+        
+        document.querySelector('.close-lightbox').addEventListener('click', function() {
+            lightbox.classList.remove('active');
+        });
+        
+        // Social Proof Notifications
+        const customers = [
+            { name: "Vina", city: "Jakarta" },
+            { name: "Dina", city: "Surabaya" },
+            { name: "Kartika", city: "Bandung" },
+            { name: "Lestari", city: "Medan" },
+            { name: "Putri", city: "Bekasi" },
+            { name: "Maya Sari", city: "Tangerang" },
+            { name: "Rani", city: "Depok" },
+            { name: "Permata", city: "Semarang" },
+            { name: "Lestari F", city: "Jakarta" }
+        ];
+        
+        const photos = [
+            "https://randomuser.me/api/portraits/women/1.jpg",
+            "https://randomuser.me/api/portraits/women/2.jpg",
+            "https://randomuser.me/api/portraits/women/3.jpg",
+            "https://randomuser.me/api/portraits/women/4.jpg",
+            "https://randomuser.me/api/portraits/women/5.jpg",
+            "https://randomuser.me/api/portraits/women/6.jpg",
+            "https://randomuser.me/api/portraits/women/7.jpg",
+            "https://randomuser.me/api/portraits/women/8.jpg",
+            "https://randomuser.me/api/portraits/women/9.jpg"
+        ];
+        
+        function showNotification() {
+            const notification = document.querySelector('.notification-popup');
+            const clone = notification.cloneNode(true);
+            clone.classList.remove('hidden');
+            
+            const randomIndex = Math.floor(Math.random() * customers.length);
+            const customer = customers[randomIndex];
+            
+            clone.querySelector('.customer-name').textContent = customer.name;
+            clone.querySelector('.customer-action').textContent = `dari ${customer.city} baru saja memesan Phone Holder Mat`;
+            clone.querySelector('img').src = photos[randomIndex];
+            
+            document.body.appendChild(clone);
+            
+            setTimeout(() => {
+                clone.classList.add('hide');
+                setTimeout(() => {
+                    clone.remove();
+                }, 500);
+            }, 5000);
+        }
+        
+        // Show first notification after 8 seconds
+        setTimeout(showNotification, 8000);
+        
+        // Then show every 10 seconds
+        setInterval(showNotification, 10000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
